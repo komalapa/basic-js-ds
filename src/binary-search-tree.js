@@ -46,7 +46,6 @@ module.exports = class BinarySearchTree {
   }
 
   has(data) {
-    let found = false;
     let curNode = this.rootNode;
     while (curNode !== null){
       if (data < curNode.data) {
@@ -54,10 +53,10 @@ module.exports = class BinarySearchTree {
       } else if (data > curNode.data){
         curNode = curNode.right;
       } else {
-        found = true;
+        return true;
       } 
     }
-    return found
+    return false
   }
 
   find(data) {
@@ -75,17 +74,17 @@ module.exports = class BinarySearchTree {
   }
 
   remove(data) {
-    let curNode = this.rootNode;
-    while (curNode !== null){
-      if (data < curNode.data) {
-        curNode = curNode.left;
-      } else if (data > curNode.data){
-        curNode = curNode.right;
-      } else {
-        return curNode
-      } 
-    }
-    return null
+    // let curNode = this.rootNode;
+    // while (curNode !== null){
+    //   if (data < curNode.data) {
+    //     curNode = curNode.left;
+    //   } else if (data > curNode.data){
+    //     curNode = curNode.right;
+    //   } else {
+    //     return curNode
+    //   } 
+    // }
+    // return null
   }
 
   min() {
